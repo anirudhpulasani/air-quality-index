@@ -1,6 +1,6 @@
 # air-quality-index
 
-Find air quality index of a city.
+To find air quality index of a city.
 
 ## Getting Started
 
@@ -8,9 +8,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You need to install reactjs to run this code
-
-## Deployment
+Need to install reactjs to run this code
 
 ## Built With
 
