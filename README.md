@@ -4,11 +4,11 @@ To find air quality index of a city.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+See prerequisites to deploy the project locally.
 
 ### Prerequisites
 
-Need to install reactjs to run this code
+Need to install reactjs to run this code. To run this program, open command prompt and go to this project folder and execute 'npm install' to install required dependencies and modules and execute 'npm start' for windows.
 
 ## Built With
 
