@@ -8,7 +8,7 @@ See prerequisites to deploy the project locally.
 
 ### Prerequisites
 
-Need to install reactjs to run this code. To run this program, open command prompt and go to this project folder and execute 'npm install' to install required dependencies and modules and execute 'npm start' for windows.
+Need to install reactjs to run this code. To run this program, open command prompt and go to this project folder and execute 'npm install' to install required dependencies and modules and execute 'npm start' to run, for windows.
 
 ## Built With
 
