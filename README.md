@@ -17,6 +17,7 @@ Need to install reactjs to run this code
 * [npm](https://www.npmjs.com/) - Dependency Management
 * [Axios](https://github.com/axios/axios) - Used to generate HTTP requests
 * [Air Visual Api](https://www.airvisual.com/) - The api used to get pollution data
+* [HTML, CSS, Bootstrap] - Used to design interface
 
 ## Authors
 
