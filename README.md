@@ -19,6 +19,6 @@ Need to install reactjs to run this code. To run this program, open command prom
 * [Air Visual Api](https://www.airvisual.com/) - The api used to get pollution data
 * [HTML, CSS, Bootstrap] - Used to design interface
 
-## Authors
+## Author
 
 * **Anirudh Reddy Pulasani**
