@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+}
+
+.App-main {
+  /* background: url("./img/air_pollution.jpg"); */
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 100px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  margin-top: 25px;
+  font-size: large;
+}
+
+.Form-input {
+  width: 25%;
+  margin: auto;
+  padding: 10px;
+}
+
+.Form-content {
+  margin: auto;
+  padding: 10px;
+  /* background: #222; */
+  /* width: 50%; */
+}
+
+.nav-tabs {
+  padding-top: 25px;
+  padding-left: 575px;
+}
+
+.Nav-content {
+  padding-top: 25px;
+}
