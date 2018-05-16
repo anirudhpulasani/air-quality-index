@@ -14,7 +14,7 @@ class Display extends Component {
 	render(){
 		return(
 		<div>
-			{this.props.error && <p>{this.props.error}</p>}		
+			{this.props.error && <p>{this.props.error}</p>}
 			{this.props.aqius && this.props.aqicn && <Tabs className = "Nav-tabs" activeKey={this.state.key} onSelect={this.handleSelect} id="controlled-tab-example">
 				<Tab className = "Nav-tabs" eventKey={1} title="AQI USA">
 					{this.props.city && this.props.state && this.props.country && <p className = "Nav-content">Location: {this.props.city}, {this.props.state}, {this.props.country}</p>}

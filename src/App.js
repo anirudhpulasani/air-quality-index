@@ -4,6 +4,7 @@ import Form from "./components/Form";
 import Display from "./components/Display";
 import './App.css';
 
+const API_KEY = '6gQxrTm6TJLaS6DFs';
 class App extends Component {
 	state = {
 		city:undefined,
@@ -18,17 +19,32 @@ class App extends Component {
 		bgColorCN:undefined,
 		error:undefined
 	};
-
+	
+	getNearestPollution = (e) =>{
+		e.preventDefault();
+		const city = undefined;
+		const state = undefined;
+		const country = undefined;
+		const url_type = "nearest";
+		const url = 'http://api.airvisual.com/v2/nearest_city?key='+API_KEY
+		this.getContent(e,city,state,country,url,url_type);
+	};
+	
 	getPollution = (e) =>{
 		e.preventDefault();
 		const city = e.target.elements.city.value;
 		const state = e.target.elements.state.value;
-		const country = e.target.elements.country.value;		
-		
-		if(city && state && country){
-			axios.get('http://api.airvisual.com/v2/city?city='+city+'&state='+state+'&country='+country+'&key=6gQxrTm6TJLaS6DFs')
+		const country = e.target.elements.country.value;
+		const url_type = undefined;
+		const url = 'http://api.airvisual.com/v2/city?city='+city+'&state='+state+'&country='+country+'&key='+API_KEY
+		this.getContent(e,city,state,country,url,url_type);
+	};
+	
+	getContent = (e,city,state,country,url,url_type) => {
+		if((city && state && country) || url_type){
+			axios.get(url)
 			.then((res) => {
-				console.log(res);
+				// console.log(res);
 				const aqius = res.data.data.current.pollution.aqius;
 				const aqicn = res.data.data.current.pollution.aqicn;
 				const mainus = res.data.data.current.pollution.mainus;
@@ -39,7 +55,7 @@ class App extends Component {
 				else if(51<= aqius && aqius <=100)
 					this.setState({bgColorUS:"yellowgreen",levelUS:"Moderate"});
 				else if(101<= aqius && aqius <=150)
-					this.setState({bgColorUS:"orange",levelUS:"Unhealthy(for sensitive groups)"});
+					this.setState({bgColorUS:"orange",levelUS:"Unhealthy (for sensitive groups)"});
 				else if(151<= aqius && aqius <=200)
 					this.setState({bgColorUS:"red",levelUS:"Unhealthy"});
 				else if(201<= aqius && aqius <=250)
@@ -52,7 +68,7 @@ class App extends Component {
 				else if(51<= aqicn && aqicn <=100)
 					this.setState({bgColorCN:"yellowgreen",levelCN:"Moderate"});
 				else if(101<= aqicn && aqicn <=150)
-					this.setState({bgColorCN:"orange",levelCN:"Unhealthy(for sensitive groups)"});
+					this.setState({bgColorCN:"orange",levelCN:"Unhealthy (for sensitive groups)"});
 				else if(151<= aqicn && aqicn <=200)
 					this.setState({bgColorCN:"red",levelCN:"Unhealthy"});
 				else if(201<= aqicn && aqicn <=250)
@@ -91,7 +107,8 @@ class App extends Component {
 					state:res.data.data.state,
 					country:res.data.data.country,
 					aqius:res.data.data.current.pollution.aqius,
-					aqicn:res.data.data.current.pollution.aqicn
+					aqicn:res.data.data.current.pollution.aqicn,
+					error:undefined
  				});
 			});
 		}else{
@@ -109,7 +126,7 @@ class App extends Component {
           <h1 className="App-title">Air Quality Index</h1>
         </header>
         <div className="App-intro">
-			<Form getPollution = {this.getPollution} />
+			<Form getPollution = {this.getPollution} getNearestPollution = {this.getNearestPollution} />
 			<Display city ={this.state.city}
 			state = {this.state.state}
 			country = {this.state.country}
